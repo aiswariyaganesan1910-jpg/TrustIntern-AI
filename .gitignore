@@ -1,5 +1,2 @@
-
-backend/app/__pycache__/
-backend/**/__pycache__/
-*.pyc
-backend/internship.db
+node_modules/
+.env

@@ -1,0 +1,65 @@
+/* Full height flex container wrapper */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Page entrance animation */
+.main-content {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effect on interactive cards */
+.card-interactive {
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-interactive:hover {
+  transform: translateY(-2px);
+  border-color: #6366f1;
+  box-shadow: 0 12px 30px -5px rgba(79, 70, 229, 0.12);
+}
+
+/* Custom Soft Light Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #a0ccf9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+@media (max-width: 640px) {
+  .main-content {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .card {
+    padding: 1.15rem;
+    border-radius: 10px;
+  }
+}

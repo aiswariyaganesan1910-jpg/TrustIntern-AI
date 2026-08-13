@@ -1,0 +1,174 @@
+/* ==========================================================================
+   TrustIntern Light Mode Theme & Core Base Reset
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+   background: linear-gradient(
+    135deg,
+    #fbd3fa,
+    #94ceed,
+    #db9cf9,
+    #db7bec
+  );
+  color: #0f172a;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* ==========================================================================
+   Soft Light Glassmorphism & UI Card Styling
+   ========================================================================== */
+.card {
+  background: linear-gradient(135deg, #feeeff, #e0f2fe, #f3e8ff);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* ==========================================================================
+   Form Controls & Input Styling
+   ========================================================================== */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #334155;
+}
+
+.form-input,
+.form-textarea,
+.form-file {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  color: #0f172a;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-file {
+  padding: 0.6rem 0.8rem;
+  cursor: pointer;
+  background-color: #f8fafc;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-file:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #94a3b8;
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Buttons & Interactive Elements
+   ========================================================================== */
+.btn-primary {
+  width: 100%;
+  background: linear-gradient(135deg, #844153, #a855f7);
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+  transition: opacity 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.95;
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+}
+
+.btn-primary:active {
+  transform: scale(0.99);
+}
+
+.btn-primary:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   Utility Animations
+   ========================================================================== */
+.spin-animation {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* src/index.css */
+
+/* Keyframe for background flashing */
+@keyframes cardBgBlink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.35; filter: brightness(1.2); }
+}
+
+/* Green background blink for Low Risk */
+.gauge-card-blink-safe {
+  background: linear-gradient(135deg, #dcfce7, #a7f3d0) !important;
+  animation: cardBgBlink 0.7s ease-in-out 5 forwards;
+}
+
+/* Amber background blink for Moderate Risk */
+.gauge-card-blink-moderate {
+  background: linear-gradient(135deg, #fef3c7, #fde68a) !important;
+  animation: cardBgBlink 0.7s ease-in-out 5 forwards;
+}
+
+/* Red background blink for High Risk */
+.gauge-card-blink-danger {
+  background: linear-gradient(135deg, #fee2e2, #fca5a5) !important;
+  animation: cardBgBlink 0.7s ease-in-out 5 forwards;
+}
